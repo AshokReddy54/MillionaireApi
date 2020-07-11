@@ -1,4 +1,10 @@
-import { Controller, Get, Post, Body, Param, UseInterceptors, ClassSerializerInterceptor } from '@nestjs/common';
+/*
+Author:- Ashok Gajjala
+File:- player.controller.ts
+Purpose:- Responsible for accepting HTTP requests from the client and providing a response
+*/
+
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { Player } from './player.entity';
 import { PlayerService } from './player.service';
 @Controller('players')

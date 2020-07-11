@@ -1,3 +1,9 @@
+/*
+Author:- Ashok Gajjala
+File:- questions.controller.ts
+Purpose:- Responsible for accepting HTTP requests from the client and providing a response
+*/
+
 import { Controller, Get, Post, Body, Param, UseInterceptors, ClassSerializerInterceptor } from '@nestjs/common';
 import { Questions } from './questions.entity';
 import { QuestionsService } from './questions.service';
@@ -10,11 +16,6 @@ export class QuestionsController {
     async create(@Body() question: Questions): Promise<any> {
         this.questionservice.create(question);
     }
-
-    // @Get()
-    // async getAllQuestions(): Promise<Questions> {
-    //     return this.questionservice.findAll();
-    // }
 
     @UseInterceptors(ClassSerializerInterceptor)
     @Get()

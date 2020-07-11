@@ -1,3 +1,9 @@
+/*
+Author:- Ashok Gajjala
+File:- questions.entity.ts
+Purpose:- Defines questions table
+*/
+
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()

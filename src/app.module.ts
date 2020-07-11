@@ -6,14 +6,15 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Questions } from './questions/questions.entity'
 import { PlayerModule } from './player/player.module';
 import { Player } from './player/player.entity';
+import {DbConfig} from './dbConfig'
 @Module({
   imports: [QuestionsModule, TypeOrmModule.forRoot({
     type: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'postgres',
-    password: 'Second@123',
-    database: 'postgres',
+    host: DbConfig.HOST,
+    port: DbConfig.PORT,
+    username: DbConfig.USERNAME,
+    password: DbConfig.PASSWORD,
+    database: DbConfig.DATABASE,
     entities: [Questions, Player],
     synchronize: true,
   }), PlayerModule],

@@ -1,3 +1,9 @@
+/*
+Author:- Ashok Gajjala
+File:- player.service.ts
+Purpose:- Responsible for providing some data, which can be reused across the application
+*/
+
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';

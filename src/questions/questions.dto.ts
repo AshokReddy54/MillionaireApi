@@ -1,3 +1,9 @@
+/*
+Author:- Ashok Gajjala
+File:- questions.dto.ts
+Purpose:- Defines how data will be sent over the network
+*/
+
 import { Exclude } from 'class-transformer';
 
 export class QuestionsDTO {
