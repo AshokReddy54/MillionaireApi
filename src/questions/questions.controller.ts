@@ -12,11 +12,13 @@ import { UsersResponse } from './questionsResponse';
 export class QuestionsController {
     constructor(private questionservice: QuestionsService) { }
 
+    // To handle the create question
     @Post('create')
     async create(@Body() question: Questions): Promise<any> {
         this.questionservice.create(question);
     }
 
+    // To handle the get all questions
     @UseInterceptors(ClassSerializerInterceptor)
     @Get()
     async getAllQuestions(): Promise<UsersResponse> {
@@ -26,6 +28,7 @@ export class QuestionsController {
         return allQuestionsResponse;
     }
 
+    // To handle the get one question
     @Get(':id')
     async getOneQuestions(@Param('id') id: string): Promise<any> {
         return this.questionservice.findOne(id);

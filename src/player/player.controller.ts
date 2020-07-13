@@ -11,11 +11,13 @@ import { PlayerService } from './player.service';
 export class PlayerController {
     constructor(private playerervice: PlayerService) { }
 
+    // To handle the create player
     @Post('create')
     async create(@Body() question: Player): Promise<any> {
         this.playerervice.create(question);
     }
 
+    // To handle the get players
     @Get()
     async getAllQuestions(): Promise<Player> {
         return this.playerervice.findAll();

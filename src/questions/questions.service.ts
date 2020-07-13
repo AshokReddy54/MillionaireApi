@@ -16,14 +16,17 @@ export class QuestionsService {
         private questionsRepository: Repository<Questions>,
     ) { }
 
+    // To save the question
     async  create(question: Questions): Promise<any> {
         return await this.questionsRepository.save(question);
     }
 
+    // To get all questions
     async  findAll(): Promise<any> {
         return await this.questionsRepository.find();
     }
 
+    // To get one question
     async  findOne(id: string): Promise<any> {
         return await this.questionsRepository.findOne(id);
     }

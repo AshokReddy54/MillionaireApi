@@ -16,10 +16,12 @@ export class PlayerService {
         private playerRepository: Repository<Player>,
     ) { }
 
+    // To save the player
     async  create(player: Player): Promise<any> {
         return await this.playerRepository.save(player);
     }
 
+    // To get the players
     async  findAll(): Promise<any> {
         return await this.playerRepository.find();
     }
